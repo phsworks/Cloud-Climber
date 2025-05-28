@@ -20,6 +20,7 @@ public class HeightTracker : MonoBehaviour
     void Update()
     {
         UpdateHeight();
+        victoryCheck();
 
         if (height > highestPoint)
         {
@@ -30,13 +31,23 @@ public class HeightTracker : MonoBehaviour
     void UpdateHeight()
     {
         height = transform.position.y - 30f;
-        heightText.text = "Height: " + Math.Round(height, 2).ToString() + "Meters";
+        heightText.text = "Height: " + Math.Round(height, 0).ToString() + " Meters";
     }
 
     void updateScore()
     {
-        highestPoint = transform.position.y - 30f;
-        scoreText.text = "Score: " + Mathf.FloorToInt(highestPoint).ToString() ;
+        highestPoint = transform.position.y -30f;
+        scoreText.text = "Score: " + Mathf.FloorToInt(highestPoint).ToString();
 
     }
+
+    void victoryCheck()
+    {
+        if (height >= 65)
+        {
+            Debug.Log("You won the game!");
+        }
+    }
+
+
 }

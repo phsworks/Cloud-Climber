@@ -17,6 +17,7 @@ public class PlayerFallDectector : MonoBehaviour
         if (transform.position.y < fallThreshold)
         {
             RestartLevel();
+            
         }
     }
 
