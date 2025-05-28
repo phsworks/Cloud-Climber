@@ -3,6 +3,7 @@ using NUnit.Framework.Internal;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.UIElements;
 
 public class HeightTracker : MonoBehaviour
 {
@@ -10,10 +11,11 @@ public class HeightTracker : MonoBehaviour
     float highestPoint = 0;
     public TMP_Text heightText;
     public TMP_Text scoreText;
+    public UIDocument endScreenDocument;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        endScreenDocument = GameObject.Find("EndScreen").GetComponent<UIDocument>();
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class HeightTracker : MonoBehaviour
     {
         if (height >= 65)
         {
-            Debug.Log("You won the game!");
+            endScreenDocument.rootVisualElement.style.display = DisplayStyle.Flex;
         }
     }
 
