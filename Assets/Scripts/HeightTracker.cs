@@ -49,6 +49,10 @@ public class HeightTracker : MonoBehaviour
         {
             endScreenDocument.rootVisualElement.style.display = DisplayStyle.Flex;
         }
+        else
+        {
+            endScreenDocument.rootVisualElement.style.display = DisplayStyle.None;
+        }
     }
 
 

@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     public static bool isRestarted = false;
     [SerializeField] private UIDocument mainMenuDocument;
     [SerializeField] private UIDocument controlsMenuDocument;
+    [SerializeField] private UIDocument endScreenDocument;
     [SerializeField] private GameObject gameRoot;
 
     private Button ControlsButton;
@@ -19,12 +20,14 @@ public class MainMenu : MonoBehaviour
         {
             mainMenuDocument.rootVisualElement.style.display = DisplayStyle.None;
             controlsMenuDocument.rootVisualElement.style.display = DisplayStyle.None;
+            endScreenDocument.rootVisualElement.style.display = DisplayStyle.None;
             gameRoot.SetActive(true);
             return;
         }
 
         VisualElement root = mainMenuDocument.rootVisualElement;
         VisualElement controlsRoot = controlsMenuDocument.rootVisualElement;
+        endScreenDocument.rootVisualElement.style.display = DisplayStyle.None;
 
         PlayButton = root.Q<Button>("PlayButton");
         ControlsButton = root.Q<Button>("ControlsButton");
@@ -40,12 +43,14 @@ public class MainMenu : MonoBehaviour
     private void ShowControlsMenu()
     {
         mainMenuDocument.rootVisualElement.style.display = DisplayStyle.None;
+        endScreenDocument.rootVisualElement.style.display = DisplayStyle.None;
         controlsMenuDocument.rootVisualElement.style.display = DisplayStyle.Flex;
     }
 
     private void ShowMainMenu()
     {
         mainMenuDocument.rootVisualElement.style.display = DisplayStyle.Flex;
+        endScreenDocument.rootVisualElement.style.display = DisplayStyle.None;
     }
 
 
@@ -58,5 +63,6 @@ public class MainMenu : MonoBehaviour
 
         mainMenuDocument.rootVisualElement.style.display = DisplayStyle.None;
         controlsMenuDocument.rootVisualElement.style.display = DisplayStyle.None;
+        endScreenDocument.rootVisualElement.style.display = DisplayStyle.None;
     }
 }
