@@ -45,7 +45,7 @@ public class HeightTracker : MonoBehaviour
 
     void victoryCheck()
     {
-        if (height >= 65)
+        if (height >= 67)
         {
             endScreenDocument.rootVisualElement.style.display = DisplayStyle.Flex;
         }
